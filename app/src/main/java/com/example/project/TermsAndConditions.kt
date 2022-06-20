@@ -2,10 +2,18 @@ package com.example.project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.project.databinding.ActivityTermsAndConditionsBinding
 
 class TermsAndConditions : AppCompatActivity() {
+    lateinit var binding: ActivityTermsAndConditionsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityTermsAndConditionsBinding.inflate(layoutInflater)
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_terms_and_conditions)
+        setContentView(binding.root)
+
+        binding.imgClose.setOnClickListener {
+            finish()
+        }
     }
 }
