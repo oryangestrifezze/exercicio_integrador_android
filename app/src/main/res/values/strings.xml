@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Project</string>
+    <!-- TODO: fazer versao PT -->
+    <string name="app_name">Not Bored</string>
+    <string name="app_title">Not Bored</string>
+    <string name="app_participants">Participants</string>
+    <string name="button_start">Start</string>
+    <string name="button_terms"><u>Terms and conditions</u></string>
 </resources>
