@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navTermsAndConditions() {
-        val intent = Intent(this, TermsAndConditions::class.java)
+        val intent = Intent(this, TermsAndConditionsActivity::class.java)
         startActivity(intent)
     }
 
