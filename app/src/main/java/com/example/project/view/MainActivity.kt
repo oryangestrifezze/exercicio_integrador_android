@@ -1,13 +1,16 @@
-package com.example.project.view
+package com.example.project
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.project.databinding.ActivityMainBinding
+import com.example.project.view.ActivitiesListActivity
+import com.example.project.view.TermsAndConditionsActivity
 import com.example.project.vm.MainViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity() : AppCompatActivity() {
+
     lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel = MainViewModel()
 
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.isValid.observe(this) { isValid ->
-            if(isValid) navActivitiesList() else showMessageError()
+            if(isValid) navActivitiesView() else showMessageError()
         }
     }
 
@@ -35,14 +38,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun showMessageError() {
-        Toast.makeText(this, "Número de participantes inválido", Toast.LENGTH_LONG).show()
-    }
-
-    private fun navActivitiesList() {
+    private fun navActivitiesView() {
         val intent = Intent(this, ActivitiesListActivity::class.java)
         startActivity(intent)
     }
 
-
+    private fun showMessageError() {
+        Toast.makeText(this,"Número de participantes inválido", Toast.LENGTH_LONG).show()
+    }
 }

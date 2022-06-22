@@ -1,33 +1,35 @@
 package com.example.project.vm
 
+import Network.ActivityList
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.project.model.ActivityModel
-import com.example.project.network.ActivitiesListMock
 
 class MainViewModel : ViewModel() {
-    private var _isvalid: MutableLiveData<Boolean> = MutableLiveData()
-
-
-    private var _activities: MutableLiveData<List<ActivityModel>> = MutableLiveData()
-
+    private var _isValid: MutableLiveData<Boolean> = MutableLiveData()
+    private val initialActivitiesList = ActivityList.getActivityList()
+    private var _activities = MutableLiveData(initialActivitiesList)
 
 
     val isValid: LiveData<Boolean>
-        get() = _isvalid
+        get() = _isValid
 
     val activities: LiveData<List<ActivityModel>>
         get() = _activities
 
-
-    fun start(participants: String){
-        _isvalid.value = participants.isNotEmpty() && participants != "0"
+    fun start(participants: String ) {
+        _isValid.value = participants != "0" && participants.isNotEmpty()
     }
 
-    fun fetchActivities(){
-        val result = ActivitiesListMock.getActivitiesList()
-        _activities.value = result
+    fun getActivityList(): LiveData<List<ActivityModel>> {
+        return _activities
+    }
+
+    fun getActivityForId(id: Int): ActivityModel? {
+        _activities.value?.let { activity ->
+            return activity.firstOrNull{ it.id == id}
+        }
+        return null
     }
 }
-
