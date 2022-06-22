@@ -14,13 +14,19 @@
         android:theme="@style/Theme.Project"
         tools:targetApi="31">
         <activity
-            android:name=".ActivitiesListActivity"
+            android:name=".RandomDetaillsActivity"
             android:exported="false" />
         <activity
-            android:name=".TermsAndConditionsActivity"
+            android:name=".SelectedDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.ActivitiesListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.TermsAndConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

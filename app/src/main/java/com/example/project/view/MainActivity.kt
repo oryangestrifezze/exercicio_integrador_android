@@ -1,4 +1,4 @@
-package com.example.project
+package com.example.project.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
             val participants = binding.inputAppNumberOfParticipants.text.toString()
             viewModel.start(participants)
         }
+
         viewModel.isValid.observe(this) { isValid ->
             if(isValid) navActivitiesList() else showMessageError()
-
         }
     }
 

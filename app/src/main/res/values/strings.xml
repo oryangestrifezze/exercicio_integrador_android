@@ -12,5 +12,18 @@
     <string name="paragraph_4">Nisl pulvinar taciti tellus diam quam dictum cursus potenti euismod natoque feugiat mattis ornare tortor, aliquam orci dapibus inceptos id egestas ante viverra donec aptent suscipit nulla. Eget nisl fringilla cras felis maecenas nisi ridiculus id conubia hac primis sem ullamcorper porttitor, rutrum ac sodales ultrices vestibulum cum leo semper fusce porta eu fermentum. Proin nisi suspendisse class facilisi curabitur quisque, fusce vulputate semper a nulla velit, duis in orci faucibus turpis. Risus metus magnis aliquam accumsan laoreet congue per,.</string>
     <string name="paragraph_5">Nisl pulvinar taciti tellus diam quam dictum cursus potenti euismod natoque feugiat mattis ornare tortor, aliquam orci dapibus inceptos id egestas ante viverra donec aptent suscipit nulla. Eget nisl fringilla cras felis maecenas nisi ridiculus id conubia hac primis sem ullamcorper porttitor, rutrum ac sodales ultrices vestibulum cum leo semper fusce porta eu fermentum. Proin nisi suspendisse class facilisi curabitur quisque, fusce vulputate semper a nulla velit, duis in orci faucibus turpis. Risus metus magnis aliquam accumsan laoreet congue per,.</string>
     <string name="page_activities">Activities</string>
+    <string name="activity_title">Activity Title</string>
+    <string name="random_title">Random</string>
+    <string name="activity_description">Activity Description</string>
+    <string name="participants_holder">Participants</string>
+    <string name="price">Price</string>
+    <string name="try_another">Try Another</string>
+    <string name="price_level">Medium</string>
+    <string name="number_partcipants">0</string>
+    <string name="back_button">back button</string>
+    <string name="icon_participants">icon_participants</string>
+    <string name="icon_price">icon_price</string>
+    <string name="icon_category">icon_category</string>
+    <string name="category">Category</string>
 
 </resources>

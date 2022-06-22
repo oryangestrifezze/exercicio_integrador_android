@@ -1,11 +1,11 @@
-package com.example.project
+package com.example.project.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.project.ActivityAdapter
 import com.example.project.databinding.ActivityActivitiesListBinding
-import com.example.project.databinding.ActivityItemBinding
 import com.example.project.vm.MainViewModel
 
 class ActivitiesListActivity : AppCompatActivity() {
@@ -20,10 +20,10 @@ class ActivitiesListActivity : AppCompatActivity() {
         binding = ActivityActivitiesListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.recycler.adapter = adapter
-        binding.recycler.layoutManager = LinearLayoutManager(this,LinearLayout.VERTICAL, false)
+        binding.recycler.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         mainViewModel.fetchActivities()
-        mainViewModel.activities.observe(this){
-            if(it.isNotEmpty()) adapter.listActivities = it
+        mainViewModel.activities.observe(this) {
+            if (it.isNotEmpty()) adapter.listActivities = it
         }
 
     }

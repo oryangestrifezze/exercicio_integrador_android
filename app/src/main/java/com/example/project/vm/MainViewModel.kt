@@ -3,7 +3,6 @@ package com.example.project.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.project.ActivitiesListActivity
 import com.example.project.model.ActivityModel
 import com.example.project.network.ActivitiesListMock
 
