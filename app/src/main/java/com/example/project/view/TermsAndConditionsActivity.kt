@@ -11,6 +11,7 @@ class TermsAndConditionsActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         binding.imgClose.setOnClickListener {
             finish()

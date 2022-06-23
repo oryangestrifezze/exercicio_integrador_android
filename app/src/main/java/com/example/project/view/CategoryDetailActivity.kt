@@ -16,6 +16,8 @@ class CategoryDetailActivity : AppCompatActivity() {
         binding = ActivityCategoryDetailBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        supportActionBar?.hide()
+
 
 
         val activityCategory = binding.textActivityTitle

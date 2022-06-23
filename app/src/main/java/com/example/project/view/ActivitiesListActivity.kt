@@ -27,7 +27,7 @@ class ActivitiesListActivity : AppCompatActivity() {
         binding = ActivityActivitiesListBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

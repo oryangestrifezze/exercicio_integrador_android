@@ -15,6 +15,7 @@ class RandomDetailActivity : AppCompatActivity() {
         binding = ActivityRandomDetailBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
 
         val activityCategory = binding.category
