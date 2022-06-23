@@ -31,6 +31,7 @@
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:src="@drawable/ic_random"
+        app:tint="#263C4E"
         app:layout_constraintBottom_toBottomOf="@+id/text_viewModel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_viewModel"
