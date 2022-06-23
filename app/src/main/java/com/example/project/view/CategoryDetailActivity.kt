@@ -2,6 +2,7 @@ package com.example.project.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.project.PreferencesApplication.Companion.preferences
 import com.example.project.vm.MainViewModel
 import com.example.project.vm.SelectedDetailViewModel
 import com.example.project.databinding.ActivityCategoryDetailBinding
@@ -30,7 +31,7 @@ class CategoryDetailActivity : AppCompatActivity() {
             val currentActivity = datasource.getActivityForId(id)
             activityCategory.text = currentActivity?.activity
             activityDescription.text = currentActivity?.title
-            activityParticipants.text = participants.toString()
+            activityParticipants.text = preferences.getParticipants().toString()
             activityPrice.text = price
         }
 
@@ -43,11 +44,11 @@ class CategoryDetailActivity : AppCompatActivity() {
                 val id = it.getInt("ID_ACTIVITY")
                 val category = it.getString("ACTIVITY_CATEGORY")
                 val price = it.getString("PRICE_KEY")
-                val participants = it.getInt("NUMBER_PARTICIPANTES")
+                //val participants = it.getInt("NUMBER_PARTICIPANTES")
                 val currentActivity = datasource.getActivityForCategory(id, category)
                 activityCategory.text = currentActivity?.activity
                 activityDescription.text = currentActivity?.title
-                activityParticipants.text = participants.toString()
+                activityParticipants.text = preferences.getParticipants().toString()
                 activityPrice.text = price
             }
 

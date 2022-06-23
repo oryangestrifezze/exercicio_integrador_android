@@ -2,6 +2,8 @@ package com.example.project.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.project.PreferencesApplication
+import com.example.project.PreferencesApplication.Companion.preferences
 import com.example.project.R
 import com.example.project.databinding.ActivityRandomDetailBinding
 import com.example.project.vm.MainViewModel
@@ -29,7 +31,7 @@ class RandomDetailActivity : AppCompatActivity() {
             val currentActivity = datasource.getActivityForId(id)
             activityCategory.text = currentActivity?.activity
             activityDescription.text = currentActivity?.title
-            activityParticipants.text = participants.toString()
+            activityParticipants.text = preferences.getParticipants().toString()
             activityPrice.text = price
         }
 
@@ -40,11 +42,11 @@ class RandomDetailActivity : AppCompatActivity() {
         binding.buttonTryAnother.setOnClickListener {
             intent.extras?.let { it ->
                 val id = (0..27).random()
-                val participants = it.getInt("NUMBER_PARTICIPANTES")
+                //val participants = it.getInt("NUMBER_PARTICIPANTES")
                 val currentActivity = datasource.getActivityForId(id)
                 activityCategory.text = currentActivity?.activity
                 activityDescription.text = currentActivity?.title
-                activityParticipants.text = participants.toString()
+                activityParticipants.text = preferences.getParticipants().toString()
                 activityPrice.text = currentActivity?.price
             }
 
