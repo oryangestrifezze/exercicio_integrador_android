@@ -2,9 +2,8 @@ package com.example.project.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.project.PreferencesApplication.Companion.preferences
+import com.example.project.vm.PreferencesApplication.Companion.preferences
 import com.example.project.vm.MainViewModel
-import com.example.project.vm.SelectedDetailViewModel
 import com.example.project.databinding.ActivityCategoryDetailBinding
 
 

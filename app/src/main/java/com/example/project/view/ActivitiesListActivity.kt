@@ -4,9 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.project.ActivityAdapter
 import com.example.project.databinding.ActivityActivitiesListBinding
 import com.example.project.model.ActivityModel
+import com.example.project.vm.ActivityAdapter
 import com.example.project.vm.MainViewModel
 
 class ActivitiesListActivity : AppCompatActivity() {

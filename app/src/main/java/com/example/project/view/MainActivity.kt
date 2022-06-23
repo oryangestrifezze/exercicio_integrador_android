@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.project.PreferencesApplication.Companion.preferences
+import com.example.project.vm.PreferencesApplication.Companion.preferences
 import com.example.project.databinding.ActivityMainBinding
 import com.example.project.view.ActivitiesListActivity
 import com.example.project.view.TermsAndConditionsActivity
