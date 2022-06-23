@@ -32,4 +32,11 @@ class MainViewModel : ViewModel() {
         }
         return null
     }
+
+    fun getActivityForCategory(id: Int, category: String?): ActivityModel? {
+        _activities.value?.let { activity ->
+            return activity.find { it.activity == category && it.id != id}
+        }
+        return null
+    }
 }

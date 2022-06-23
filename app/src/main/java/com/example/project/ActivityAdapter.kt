@@ -30,7 +30,7 @@ class ActivityAdapter : RecyclerView.Adapter<ActivityAdapter.ActivitieAdapterVie
         holder.bind(item)
     }
 
-    override fun getItemCount(): Int = listActivities.size
+    override fun getItemCount(): Int = 9
 
     class ActivitieAdapterViewHolder(val binding: ActivityItemBinding, val itemClicked: onClick?) : RecyclerView.ViewHolder(binding.root) {
 

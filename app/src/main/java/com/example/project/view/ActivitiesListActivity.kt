@@ -3,6 +3,7 @@ package com.example.project.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project.ActivityAdapter
 import com.example.project.databinding.ActivityActivitiesListBinding
@@ -11,6 +12,7 @@ import com.example.project.vm.MainViewModel
 
 class ActivitiesListActivity : AppCompatActivity() {
     val ACTIVITY_ID = "ID_ACTIVITY"
+    val ACTIVITY_CATEGORY = "ACTIVITY_CATEGORY"
 
     private  lateinit var binding: ActivityActivitiesListBinding
     private val startViewModel: MainViewModel = MainViewModel()
@@ -40,6 +42,7 @@ class ActivitiesListActivity : AppCompatActivity() {
     private fun adapterOnClick(activity: ActivityModel) {
         val intent = Intent(this, CategoryDetailActivity()::class.java)
         intent.putExtra(ACTIVITY_ID, activity.id)
+        intent.putExtra(ACTIVITY_CATEGORY, activity.activity)
         startActivity(intent)
     }
 }

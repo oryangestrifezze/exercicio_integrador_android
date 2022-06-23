@@ -33,6 +33,18 @@ class CategoryDetailActivity : AppCompatActivity() {
             binding.imageArrowBack.setOnClickListener {
                 finish()
             }
+
+            binding.buttonTryAnother.setOnClickListener {
+                intent.extras?.let { it ->
+                    val id = it.getInt("ID_ACTIVITY")
+                    val category = it.getString("ACTIVITY_CATEGORY")
+                    val currentActivity = datasource.getActivityForCategory(id, category)
+                    activityCategory.text = currentActivity?.activity
+                    activityDescription.text = currentActivity?.title
+                    activityPrice.text = currentActivity?.price
+                }
+
+            }
         }
 
     }
