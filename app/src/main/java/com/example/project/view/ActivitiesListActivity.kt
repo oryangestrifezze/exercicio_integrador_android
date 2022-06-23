@@ -3,7 +3,6 @@ package com.example.project.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project.ActivityAdapter
 import com.example.project.databinding.ActivityActivitiesListBinding
@@ -39,6 +38,10 @@ class ActivitiesListActivity : AppCompatActivity() {
                 adapter.listActivities = it
             }
         }
+
+        binding.randomButton.setOnClickListener {
+            randomOnClick()
+        }
     }
 
     private fun adapterOnClick(activity: ActivityModel) {
@@ -48,7 +51,6 @@ class ActivitiesListActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    //TODO: add essa funcao ao click do random
     private fun randomOnClick() {
         val intent = Intent(this, RandomDetailActivity()::class.java)
         val randomId  = (0..18).random()

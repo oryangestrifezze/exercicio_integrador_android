@@ -36,7 +36,7 @@ class RandomDetailActivity : AppCompatActivity() {
 
         binding.buttonTryAnother.setOnClickListener {
             intent.extras?.let { it ->
-                val id = it.getInt("ACTIVITY_RANDOM")
+                val id = (0..18).random()
                 val currentActivity = datasource.getActivityForId(id)
                 activityCategory.text = currentActivity?.activity
                 activityDescription.text = currentActivity?.title
