@@ -13,6 +13,7 @@ import com.example.project.vm.MainViewModel
 class ActivitiesListActivity : AppCompatActivity() {
     val ACTIVITY_ID = "ID_ACTIVITY"
     val ACTIVITY_CATEGORY = "ACTIVITY_CATEGORY"
+    val ACTIVITY_RANDOM = "ACTIVITY_RANDOM"
 
     private  lateinit var binding: ActivityActivitiesListBinding
     private val startViewModel: MainViewModel = MainViewModel()
@@ -39,10 +40,19 @@ class ActivitiesListActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun adapterOnClick(activity: ActivityModel) {
         val intent = Intent(this, CategoryDetailActivity()::class.java)
         intent.putExtra(ACTIVITY_ID, activity.id)
         intent.putExtra(ACTIVITY_CATEGORY, activity.activity)
+        startActivity(intent)
+    }
+
+    //TODO: add essa funcao ao click do random
+    private fun randomOnClick() {
+        val intent = Intent(this, RandomDetailActivity()::class.java)
+        val randomId  = (0..18).random()
+        intent.putExtra(ACTIVITY_RANDOM, randomId)
         startActivity(intent)
     }
 }
