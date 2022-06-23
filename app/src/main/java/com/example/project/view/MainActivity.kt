@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.project.databinding.ActivityMainBinding
 import com.example.project.view.ActivitiesListActivity
 import com.example.project.view.TermsAndConditionsActivity
+import com.example.project.vm.EditTextListener
 import com.example.project.vm.MainViewModel
 
 class MainActivity() : AppCompatActivity() {
