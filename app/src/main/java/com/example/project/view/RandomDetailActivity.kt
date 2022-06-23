@@ -2,12 +2,9 @@ package com.example.project.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.project.PreferencesApplication
 import com.example.project.PreferencesApplication.Companion.preferences
-import com.example.project.R
 import com.example.project.databinding.ActivityRandomDetailBinding
 import com.example.project.vm.MainViewModel
-import com.example.project.vm.SelectedDetailViewModel
 
 class RandomDetailActivity : AppCompatActivity() {
     private val datasource: MainViewModel = MainViewModel()
@@ -17,7 +14,7 @@ class RandomDetailActivity : AppCompatActivity() {
         binding = ActivityRandomDetailBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
 
         val activityCategory = binding.category
         val activityDescription = binding.textDescription
@@ -27,7 +24,6 @@ class RandomDetailActivity : AppCompatActivity() {
         intent.extras?.let { it ->
             val id = it.getInt("ACTIVITY_RANDOM")
             val price = it.getString("PRICE_KEY")
-            val participants = it.getInt("NUMBER_PARTICIPANTES")
             val currentActivity = datasource.getActivityForId(id)
             activityCategory.text = currentActivity?.activity
             activityDescription.text = currentActivity?.title
@@ -42,7 +38,6 @@ class RandomDetailActivity : AppCompatActivity() {
         binding.buttonTryAnother.setOnClickListener {
             intent.extras?.let { it ->
                 val id = (0..27).random()
-                //val participants = it.getInt("NUMBER_PARTICIPANTES")
                 val currentActivity = datasource.getActivityForId(id)
                 activityCategory.text = currentActivity?.activity
                 activityDescription.text = currentActivity?.title

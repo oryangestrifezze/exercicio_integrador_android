@@ -11,12 +11,12 @@ import com.example.project.databinding.ActivityCategoryDetailBinding
 class CategoryDetailActivity : AppCompatActivity() {
     private val datasource: MainViewModel = MainViewModel()
     lateinit var binding: ActivityCategoryDetailBinding
-    private val viewModel: SelectedDetailViewModel = SelectedDetailViewModel(datasource)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCategoryDetailBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
 
         val activityCategory = binding.textActivityTitle
@@ -27,7 +27,6 @@ class CategoryDetailActivity : AppCompatActivity() {
         intent.extras?.let { it ->
             val id = it.getInt("ID_ACTIVITY")
             val price = it.getString("PRICE_KEY")
-            val participants = it.getInt("NUMBER_PARTICIPANTES")
             val currentActivity = datasource.getActivityForId(id)
             activityCategory.text = currentActivity?.activity
             activityDescription.text = currentActivity?.title
@@ -44,7 +43,6 @@ class CategoryDetailActivity : AppCompatActivity() {
                 val id = it.getInt("ID_ACTIVITY")
                 val category = it.getString("ACTIVITY_CATEGORY")
                 val price = it.getString("PRICE_KEY")
-                //val participants = it.getInt("NUMBER_PARTICIPANTES")
                 val currentActivity = datasource.getActivityForCategory(id, category)
                 activityCategory.text = currentActivity?.activity
                 activityDescription.text = currentActivity?.title

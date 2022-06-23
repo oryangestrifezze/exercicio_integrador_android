@@ -9,7 +9,7 @@
     <View
         android:id="@+id/view_header"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="144dp"
         android:background="@color/dark_blue_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,8 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintBottom_toBottomOf="@+id/view_header"
         app:layout_constraintStart_toStartOf="@+id/view_header"
-        app:layout_constraintTop_toTopOf="@+id/view_header" />
+        app:layout_constraintTop_toTopOf="@+id/view_header"
+        android:contentDescription="@string/back_button" />
 
     <TextView
         android:id="@+id/text_activity_title"
@@ -42,7 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/activity_description"
-        android:textSize="32sp"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

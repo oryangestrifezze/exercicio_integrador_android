@@ -15,8 +15,6 @@ class ActivitiesListActivity : AppCompatActivity() {
     val ACTIVITY_RANDOM = "ACTIVITY_RANDOM"
     val PRICE_KEY = "PRICE_KEY"
     var PRICE = "Default Value"
-    //val NUMBER_PARTICIPANTES_KEY = "NUMBER_PARTICIPANTES"
-    //var NUMBER_PARTICIPANTES = 0
 
     private lateinit var binding: ActivityActivitiesListBinding
     private val startViewModel: MainViewModel = MainViewModel()
@@ -27,7 +25,7 @@ class ActivitiesListActivity : AppCompatActivity() {
         binding = ActivityActivitiesListBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -50,7 +48,6 @@ class ActivitiesListActivity : AppCompatActivity() {
 
         intent.extras?.let { it ->
             PRICE = it.getString("PRICE_KEY").toString()
-            //NUMBER_PARTICIPANTES = it.getInt("NUMBER_PARTICIPANTES")
         }
     }
 
@@ -59,7 +56,6 @@ class ActivitiesListActivity : AppCompatActivity() {
         intent.putExtra(ACTIVITY_ID, activity.id)
         intent.putExtra(ACTIVITY_CATEGORY, activity.activity)
         intent.putExtra(PRICE_KEY, PRICE)
-        //intent.putExtra(NUMBER_PARTICIPANTES_KEY, NUMBER_PARTICIPANTES)
         startActivity(intent)
     }
 
@@ -68,7 +64,6 @@ class ActivitiesListActivity : AppCompatActivity() {
         val randomId = (0..27).random()
         intent.putExtra(ACTIVITY_RANDOM, randomId)
         intent.putExtra(PRICE_KEY, PRICE)
-        //intent.putExtra(NUMBER_PARTICIPANTES_KEY, NUMBER_PARTICIPANTES)
         startActivity(intent)
     }
 }

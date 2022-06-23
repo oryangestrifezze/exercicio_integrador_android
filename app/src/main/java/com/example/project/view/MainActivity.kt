@@ -21,7 +21,7 @@ class MainActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
+        supportActionBar?.hide()
         binding.buttonTerms.setOnClickListener {
             navTermsAndConditions()
         }
@@ -60,7 +60,6 @@ class MainActivity() : AppCompatActivity() {
         val high = "High"
 
         val PRICE_KEY = "PRICE_KEY"
-        //val NUMBER_PARTICIPANTES = "NUMBER_PARTICIPANTES"
         var price: String? = free
 
         val numberOfParticipants = preferences.getParticipants()
@@ -72,7 +71,6 @@ class MainActivity() : AppCompatActivity() {
 
         val intent = Intent(this, ActivitiesListActivity()::class.java)
         intent.putExtra(PRICE_KEY, price)
-        //intent.putExtra(NUMBER_PARTICIPANTES, numberOfParticipants)
         startActivity(intent)
     }
 }
