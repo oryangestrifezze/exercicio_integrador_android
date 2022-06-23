@@ -62,7 +62,7 @@ class MainActivity() : AppCompatActivity() {
 
         if (numberOfParticipants == 0) price = free
         else if (numberOfParticipants < 3) price = low
-        else if (numberOfParticipants < 6) price = medium
+        else if (numberOfParticipants <= 6) price = medium
         else if (numberOfParticipants > 6) price = high
 
         val intent = Intent(this, ActivitiesListActivity()::class.java)
