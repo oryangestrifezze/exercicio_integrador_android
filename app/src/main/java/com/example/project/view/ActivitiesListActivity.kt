@@ -33,7 +33,6 @@ class ActivitiesListActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         adapter.itemClicked = ActivityAdapter.onClick {
-            it
             adapterOnClick(it)
         }
 
@@ -66,7 +65,7 @@ class ActivitiesListActivity : AppCompatActivity() {
 
     private fun randomOnClick() {
         val intent = Intent(this, RandomDetailActivity()::class.java)
-        val randomId = (0..18).random()
+        val randomId = (0..27).random()
         intent.putExtra(ACTIVITY_RANDOM, randomId)
         intent.putExtra(PRICE_KEY, PRICE)
         intent.putExtra(NUMBER_PARTICIPANTES_KEY, NUMBER_PARTICIPANTES)
