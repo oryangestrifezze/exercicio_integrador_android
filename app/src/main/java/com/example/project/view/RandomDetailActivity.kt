@@ -9,8 +9,7 @@ import com.example.project.vm.SelectedDetailViewModel
 
 class RandomDetailActivity : AppCompatActivity() {
     private val datasource: MainViewModel = MainViewModel()
-    lateinit var binding : ActivityRandomDetailBinding
-    private val viewModel : SelectedDetailViewModel = SelectedDetailViewModel(datasource)
+    lateinit var binding: ActivityRandomDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityRandomDetailBinding.inflate(layoutInflater)
@@ -24,10 +23,11 @@ class RandomDetailActivity : AppCompatActivity() {
 
         intent.extras?.let { it ->
             val id = it.getInt("ACTIVITY_RANDOM")
+            val price = it.getString("PRICE_KEY")
             val currentActivity = datasource.getActivityForId(id)
             activityCategory.text = currentActivity?.activity
             activityDescription.text = currentActivity?.title
-            activityPrice.text = currentActivity?.price
+            activityPrice.text = price
         }
 
         binding.imageArrowBack.setOnClickListener {

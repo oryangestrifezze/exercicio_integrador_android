@@ -32,7 +32,7 @@ class MainActivity() : AppCompatActivity() {
         }
 
         viewModel.isValid.observe(this) { isValid ->
-            if(isValid) navActivitiesView() else showMessageError()
+            if (isValid) navActivitiesView() else showMessageError()
         }
     }
 
@@ -42,11 +42,30 @@ class MainActivity() : AppCompatActivity() {
     }
 
     private fun navActivitiesView() {
-        val intent = Intent(this, ActivitiesListActivity::class.java)
-        startActivity(intent)
+        calculatePrice()
     }
 
     private fun showMessageError() {
-        Toast.makeText(this,"Número de participantes inválido", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Número de participantes inválido", Toast.LENGTH_LONG).show()
+    }
+
+    fun calculatePrice() {
+        val free = "Free"
+        val low = "Low"
+        val medium = "Medium"
+        val high = "High"
+
+        val PRICE_KEY = "PRICE_KEY"
+        var price: String? = free
+        val numberOfParticipants = binding.inputAppNumberOfParticipants.text.toString().toInt()
+
+        if (numberOfParticipants == 0) price = free
+        else if (numberOfParticipants < 3) price = low
+        else if (numberOfParticipants < 6) price = medium
+        else if (numberOfParticipants > 6) price = high
+
+        val intent = Intent(this, ActivitiesListActivity()::class.java)
+        intent.putExtra(PRICE_KEY, price)
+        startActivity(intent)
     }
 }
