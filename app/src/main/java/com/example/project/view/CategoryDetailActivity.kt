@@ -21,13 +21,16 @@ class CategoryDetailActivity : AppCompatActivity() {
         val activityCategory = binding.textActivityTitle
         val activityDescription = binding.textDescription
         val activityPrice = binding.textLevelPrice
+        val activityParticipants = binding.textNumberParticipants
 
         intent.extras?.let { it ->
             val id = it.getInt("ID_ACTIVITY")
             val price = it.getString("PRICE_KEY")
+            val participants = it.getInt("NUMBER_PARTICIPANTES")
             val currentActivity = datasource.getActivityForId(id)
             activityCategory.text = currentActivity?.activity
             activityDescription.text = currentActivity?.title
+            activityParticipants.text = participants.toString()
             activityPrice.text = price
         }
 
@@ -40,9 +43,11 @@ class CategoryDetailActivity : AppCompatActivity() {
                 val id = it.getInt("ID_ACTIVITY")
                 val category = it.getString("ACTIVITY_CATEGORY")
                 val price = it.getString("PRICE_KEY")
+                val participants = it.getInt("NUMBER_PARTICIPANTES")
                 val currentActivity = datasource.getActivityForCategory(id, category)
                 activityCategory.text = currentActivity?.activity
                 activityDescription.text = currentActivity?.title
+                activityParticipants.text = participants.toString()
                 activityPrice.text = price
             }
 

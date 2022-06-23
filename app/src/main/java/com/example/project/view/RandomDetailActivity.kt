@@ -19,14 +19,17 @@ class RandomDetailActivity : AppCompatActivity() {
 
         val activityCategory = binding.category
         val activityDescription = binding.textDescription
+        val activityParticipants = binding.textNumberParticipants
         val activityPrice = binding.textLevelPrice
 
         intent.extras?.let { it ->
             val id = it.getInt("ACTIVITY_RANDOM")
             val price = it.getString("PRICE_KEY")
+            val participants = it.getInt("NUMBER_PARTICIPANTES")
             val currentActivity = datasource.getActivityForId(id)
             activityCategory.text = currentActivity?.activity
             activityDescription.text = currentActivity?.title
+            activityParticipants.text = participants.toString()
             activityPrice.text = price
         }
 
@@ -37,9 +40,11 @@ class RandomDetailActivity : AppCompatActivity() {
         binding.buttonTryAnother.setOnClickListener {
             intent.extras?.let { it ->
                 val id = (0..18).random()
+                val participants = it.getInt("NUMBER_PARTICIPANTES")
                 val currentActivity = datasource.getActivityForId(id)
                 activityCategory.text = currentActivity?.activity
                 activityDescription.text = currentActivity?.title
+                activityParticipants.text = participants.toString()
                 activityPrice.text = currentActivity?.price
             }
 
