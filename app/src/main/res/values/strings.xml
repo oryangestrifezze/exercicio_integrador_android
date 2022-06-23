@@ -25,5 +25,6 @@
     <string name="icon_price">icon_price</string>
     <string name="icon_category">icon_category</string>
     <string name="category">Category</string>
+    <string name="random_button">random_button</string>
 
 </resources>

@@ -23,6 +23,9 @@ class MainActivity() : AppCompatActivity() {
             navTermsAndConditions()
         }
 
+        val editText = binding.inputAppNumberOfParticipants
+        editText.addTextChangedListener(EditTextListener(binding))
+
         binding.buttonStart.setOnClickListener {
             val participants = binding.inputAppNumberOfParticipants.text.toString()
             viewModel.start(participants)
