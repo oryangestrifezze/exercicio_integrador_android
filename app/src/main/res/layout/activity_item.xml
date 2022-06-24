@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imgIcon"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        app:tint="@color/white"
+        app:tint="#263C4E"
         android:src="@drawable/relaxation_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

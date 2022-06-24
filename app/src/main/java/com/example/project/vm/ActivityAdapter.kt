@@ -38,6 +38,7 @@ class ActivityAdapter : RecyclerView.Adapter<ActivityAdapter.ActivitieAdapterVie
 
         fun bind(activitie : ActivityModel) {
             binding.textActivitie.text = activitie.activity
+            binding.imgIcon.setImageResource(activitie.image)
 
             binding.root.setOnClickListener {
                 itemClicked?.activityClicked(activitie)
